@@ -1,0 +1,21 @@
+name: kols-classic-testing/nadeem-classic-testing2-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: Agent job 1
+    runs-on:
+      - self-hosted
+      - Default
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: install msbuild
+      uses: microsoft/setup-msbuild@v1.3.1
+    - name: run msbuild
+      run: msbuild **/*.sln
+    - name: PowerShell Script
+      run: azure-pipelines.yml
+      shell: powershell
