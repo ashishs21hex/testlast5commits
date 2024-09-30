@@ -8,7 +8,6 @@ jobs:
     name: pipelin-migrat
     runs-on:
       - self-hosted
-      - Default
     steps:
     - name: checkout
       uses: actions/checkout@v4.1.0
