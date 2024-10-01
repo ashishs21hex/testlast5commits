@@ -1,0 +1,16 @@
+name: kols-classic-testing/restore-nuget-packages-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipeline-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    # NuGet does not accept glob patterns. Consider specifying files directly or using a solution.
+    - name: NuGet restore
+      run: nuget restore **/*.sln -Verbosity "Detailed"
