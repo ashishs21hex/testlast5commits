@@ -1,0 +1,17 @@
+name: kols-classic-testing/visual-studio-build-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: install msbuild
+      uses: microsoft/setup-msbuild@v1.3.1
+    - name: run msbuild
+      run: msbuild **\*.sln
