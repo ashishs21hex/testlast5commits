@@ -1,0 +1,26 @@
+name: kols-classic-testing/VSTest-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: VsTest - testAssemblies
+      uses: microsoft/vstest-action@v1.0.0
+      with:
+        testAssembly: |-
+          **\*test*.dll
+          !**\*TestAdapter.dll
+          !**\obj\**
+        searchFolder: "${{ github.workspace }}"
+        vstestLocationMethod: version
+        vsTestVersion: latest
+        runInParallel: 'False'
+        runTestsInIsolation: 'False'
+        codeCoverageEnabled: 'False'
