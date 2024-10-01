@@ -21,5 +21,6 @@ jobs:
         accountName: "${{ env.AZ_ACCOUNT_NAME }}"
         personalAccessToken: "${{ secrets.PUBLISH_SYMBOLS_ACCESS_TOKEN }}"
         symbolsFolder: "${{ github.workspace }}"
-        searchPattern: "**/bin/**/*.pdb"
+        searchPattern: "**/*.pdb"
         symbolServiceUrl: "${{ env.ARTIFACT_SERVICE_URL }}"
+        
