@@ -1,0 +1,26 @@
+name: kols-classic-testing/publish-symbols-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: Agent job 1
+    runs-on:
+      - self-hosted
+      - Default
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: Publish symbols path
+      uses: microsoft/action-publish-symbols@v2.1.6
+      env:
+        AZ_ACCOUNT_NAME: UPDATE_ME
+        ARTIFACT_SERVICE_URL: "'https://artifacts.dev.azure.com"
+      timeout-minutes: 0
+      with:
+        accountName: "${{ env.AZ_ACCOUNT_NAME }}"
+        personalAccessToken: "${{ secrets.PUBLISH_SYMBOLS_ACCESS_TOKEN }}"
+        symbolsFolder: "${{ github.workspace }}"
+        searchPattern: "**/bin/**/*.pdb"
+        symbolServiceUrl: "${{ env.ARTIFACT_SERVICE_URL }}"
