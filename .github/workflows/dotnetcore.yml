@@ -1,0 +1,15 @@
+name: kols-classic-testing/DotNetCoreCLI-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: dotnet build
+      run: dotnet build
