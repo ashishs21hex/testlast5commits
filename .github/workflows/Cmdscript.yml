@@ -1,0 +1,17 @@
+name: kols-classic-testing/CmdScript-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: Command Line Script
+      run: |-
+        echo Write your commands here
+        echo Use the environment variables input below to pass secret variables to this script
