@@ -1,0 +1,17 @@
+name: kols-classic-testing/NuGet-tool-installer-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: Use NuGet 4.3.0
+      uses: nuget/setup-nuget@v1.2.0
+      with:
+        nuget-version: 4.3.0
