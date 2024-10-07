@@ -1,0 +1,17 @@
+name: kols-classic-testing/UseNode-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: Use Node 6.x
+      uses: actions/setup-node@v4.0.0
+      with:
+        node-version: 6.x
