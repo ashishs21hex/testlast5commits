@@ -1,0 +1,16 @@
+name: kols-classic-testing/Powershell-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: PowerShell Script
+      run: sample.ps
+      shell: powershell
