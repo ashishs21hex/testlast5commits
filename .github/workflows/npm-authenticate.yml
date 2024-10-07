@@ -1,0 +1,24 @@
+name: kols-classic-testing/npm-authenticate-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+#     # This item has no matching transformer
+#     - environment: {}
+#       enabled: true
+#       continueOnError: false
+#       alwaysRun: false
+#       displayName: 'npm Authenticate '
+#       task: ad884ca2-732e-4b85-b2d3-ed71bcbd2788@0
+#       inputs:
+#         workingFile:
+#         customEndpoint:
+#       task_type: task
