@@ -1,0 +1,34 @@
+name: kols-classic-testing/gulp-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+#     # This item has no matching transformer
+#     - environment: {}
+#       enabled: true
+#       continueOnError: false
+#       alwaysRun: false
+#       displayName: 'gulp '
+#       task: b82cfbe4-34f9-40f5-889e-c8842ca9dd9d@0
+#       inputs:
+#         gulpFile: gulpfile.js
+#         targets:
+#         arguments:
+#         cwd:
+#         gulpjs: node_modules/gulp/bin/gulp.js
+#         publishJUnitResults: false
+#         testResultsFiles: "**/TEST-*.xml"
+#         testRunTitle:
+#         enableCodeCoverage: false
+#         testFramework: Mocha
+#         srcFiles:
+#         testFiles: test/*.js
+#       task_type: task
