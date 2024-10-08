@@ -1,0 +1,31 @@
+name: kols-classic-testing/curl-CI
+on:
+  workflow_dispatch:
+env:
+  system_debug: 'false'
+jobs:
+  Phase_1:
+    name: pipelin-migrat
+    runs-on:
+      - self-hosted
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+#     # This item has no matching transformer
+#     - environment: {}
+#       enabled: true
+#       continueOnError: false
+#       alwaysRun: false
+#       displayName: Upload SamplefileforCurl with cURL
+#       task: ad8974d8-de11-11e4-b2fe-7fb898a745f3@2
+#       inputs:
+#         files: SamplefileforCurl
+#         authType: ServiceEndpoint
+#         serviceEndpoint: 9f9619db-ae7c-49c3-b165-8c63a911702b
+#         username:
+#         password:
+#         url:
+#         remotePath: upload/${{ github.run_id }}/
+#         options:
+#         redirectStderr: true
+#       task_type: task
